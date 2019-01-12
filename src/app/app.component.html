@@ -1,5 +1,26 @@
 <div>
   <h1>FUNCION SENCILLA</h1>
-  <input (keyup)="updateText($event)" />
+  <input (keyup)="escribirText($event)" />
   <p>{{ text }}</p>
 </div>
+<!-- -------------------------- -->
+<div (click)="siExiste()">
+  <h1>Clases</h1>
+  <div class="{{ showDiv ? 'true' : 'false' }} ">estado de la variable showDiv: {{ showDiv }}</div>
+  <div *ngIf="showDiv">showDiv es verdadero</div>
+<!-- como existe showDiv muestra esto -->
+  <div *ngIf="!showDiv">showDiv es falso</div>
+  <!-- como existe showDiv ahora es diferente muestra esto -->
+</div>
+<!-- -------------------------- -->
+
+<div class="{{ cambioCheck ? 'verdadero' : 'falso' }} ">
+    <h1>Cuadrado</h1>
+  <input type="checkbox"  value='{{cambioCheck}}' (click)="siCheck()"> 
+
+</div>
+<!-- -------------------------- -->
+<div class="emojis">
+    <h1>emojis</h1>
+    <span *ngFor="let emoji of emojis">{{ emoji.text }} => {{ emoji.icon }}</span>
+  </div>
